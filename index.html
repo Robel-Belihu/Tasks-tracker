@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Track tasks</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="col-lg-6">
+        <center>
+          <h1>Task Tracker</h1>
+        </center>
+
+        <div class="jumbotron">
+          <h3>Add Tasks</h3>
+          <form id="issueInputForm">
+            <div class="form-group">
+              <label for="issueDescription">Task Description</label>
+              <input
+                type="text"
+                class="form-control"
+                id="issueDescription"
+                placeholder="Describe the issue ..."
+              />
+            </div>
+            <div class="form-group">
+              <label for="priority">Priority</label>
+              <select id="priority" class="form-control">
+                <option value="Very High">Very High</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+                <option value="Very Low">Very Low</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="isToBeDoneBy">To be done by</label>
+              <input
+                type="text"
+                class="form-control"
+                id="isToBeDoneBy"
+                placeholder="to be done by ..."
+              />
+            </div>
+            <button
+              id="add-issue"
+              onclick="submitIssue()"
+              class="btn btn-primary"
+            >
+              Add Task
+            </button>
+          </form>
+        </div>
+      </div>
+      <br /><br /><br /><br />
+      <div class="col-lg-4">
+        <div id="issuesList"></div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="emptyField"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="emptyFieldLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="emptyFieldLabel">Invalid Input!</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
